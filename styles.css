@@ -12,6 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 20px; /* Adiciona espaçamento para telas pequenas */
 }
 
 .container {
@@ -27,6 +28,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap; /* Para empilhar os contadores em telas pequenas */
 }
 
 .time {
@@ -46,4 +48,24 @@ h1 {
 #days, #hours, #minutes, #seconds {
     font-size: 2rem;
     font-weight: bold;
+}
+
+/* Media query para telas pequenas */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .time {
+        width: 80px; /* Reduz a largura das caixas de tempo */
+        padding: 15px; /* Reduz o espaçamento interno */
+    }
+
+    #days, #hours, #minutes, #seconds {
+        font-size: 1.5rem; /* Reduz o tamanho dos números */
+    }
+
+    #countdown {
+        gap: 10px; /* Reduz o espaçamento entre os blocos de contagem */
+    }
 }
